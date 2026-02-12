@@ -1,0 +1,435 @@
+:root {
+    --bg-pink: #ffe6ea;
+    --card-pink: #fff0f3;
+    --primary-red: #ff4d6d;
+    --text-color: #590d22;
+    --btn-shadow: rgba(255, 77, 109, 0.4);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-pink);
+    background-image: radial-gradient(#ffccd5 2px, transparent 2px);
+    background-size: 30px 30px;
+    font-family: 'Short Stack', cursive;
+    /* Changed to match image better */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- Outer Background Decorations --- */
+.outer-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.outer-dec {
+    position: absolute;
+    opacity: 0.8;
+}
+
+.balloon-left {
+    top: 10%;
+    left: 5%;
+    width: 75px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon-right {
+    top: 15%;
+    right: 5%;
+    width: 70px;
+    animation: float 7s ease-in-out infinite reverse;
+}
+
+
+.cloud-2 {
+    bottom: 100px;
+    right: 7%;
+    width: 200px;
+    opacity: 0.6;
+    animation: drift 25s linear infinite reverse;
+}
+
+.sparkles-1 {
+    bottom: 50px;
+    left: 10%;
+    width: 120px;
+    animation: twinkle 2s infinite;
+}
+
+.cupid {
+    top: 500px;
+    right: 10%;
+    width: 120px;
+    animation: fly 10s linear infinite;
+}
+
+@keyframes drift {
+    from {
+        transform: translateX(-20px);
+    }
+
+    to {
+        transform: translateX(20px);
+    }
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(20px, -20px) rotate(5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* --- BIG Fun Container --- */
+.main-card {
+    position: relative;
+    width: 95%;
+    max-width: 1100px;
+    /* Reduced from 1100px */
+    min-height: 450px;
+    /* Reduced from 400px */
+    background: var(--card-pink);
+    border-radius: 50px;
+    border: 8px solid #fff;
+    box-shadow: 0 20px 60px rgba(255, 77, 109, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    box-sizing: border-box;
+    z-index: 10;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Decorations (Inner Stickers) */
+.decoration {
+    position: absolute;
+    width: 120px;
+    z-index: 11;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.decoration:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.hanging-hearts {
+    top: -30px;
+    left: 50px;
+    width: 70px;
+}
+
+.paper-plane {
+    bottom: 50px;
+    left: -10px;
+    width: 140px;
+    transform: rotate(15deg);
+}
+
+.calendar-icon {
+    top: 40px;
+    right: 20px;
+    width: 120px;
+    transform: rotate(10deg);
+}
+
+.chocolates {
+    bottom: -10px;
+    right: -20px;
+    width: 150px;
+}
+
+/* Screen Management */
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    z-index: 12;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fun-title {
+    font-family: 'Patrick Hand', cursive;
+    /* More marker-like */
+    font-size: 4rem;
+    color: var(--primary-red);
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 3px 3px 0px #fff;
+    transform: rotate(-2deg);
+    /* Slight tilt like handwriting */
+}
+
+.subtitle {
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.main-image-wrapper {
+    width: 300px;
+    height: 300px;
+    /* Allow height to adjust */
+    /* Removed circle background styles */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    gap: 3rem;
+    margin-top: 1.5rem;
+}
+
+.fun-btn {
+    padding: 18px 50px;
+    font-family: 'Short Stack', cursive;
+    font-weight: 700;
+    font-size: 1.8rem;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.fun-btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.yes-btn {
+    background: var(--primary-red);
+    color: white;
+}
+
+.no-btn {
+    background: #ffbdc7;
+    color: var(--text-color);
+    border: 3px solid var(--primary-red);
+}
+
+.retry-btn {
+    background: var(--primary-red);
+    color: white;
+}
+
+.restart-btn {
+    margin-top: 2rem;
+    background: transparent;
+    border: 2px dashed var(--text-color);
+    color: var(--text-color);
+}
+
+/* Gift Box Logic */
+.gift-box-container {
+    margin: 2rem 0;
+}
+
+.gift-box-btn {
+    /* Previously font-size based, now just a button container */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border-radius: 20px;
+}
+
+.gift-box-img {
+    width: 200px;
+    /* Adjust size of gift image */
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+}
+
+.gift-box-btn:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.click-me {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Revealed Gifts */
+.gifts-display {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gift-item {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotate(3deg);
+}
+
+.gift-item:nth-child(even) {
+    transform: rotate(-2deg);
+}
+
+.gift-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 5px solid #fff;
+}
+
+.message-box {
+    background: #fff;
+    padding: 1.5rem 3rem;
+    border-radius: 25px;
+    margin-top: 2rem;
+    border: 3px dashed var(--primary-red);
+    font-size: 1.8rem;
+    max-width: 80%;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 800px) {
+    .main-card {
+        width: 95%;
+        height: auto;
+        padding: 4rem 1rem 2rem 1rem;
+        border-radius: 30px;
+    }
+
+    .decoration {
+        width: 80px;
+    }
+
+    .hanging-hearts {
+        left: 10px;
+    }
+
+    .calendar-icon {
+        right: 10px;
+    }
+
+    .fun-title {
+        font-size: 3rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .gifts-display {
+        gap: 1rem;
+    }
+
+    .gift-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .cupid,
+    .cloud-2 {
+        display: none;
+    }
+}

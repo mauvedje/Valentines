@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Outer Background Decorations -->
+    <div class="outer-decorations">
+        <img src="balloon.png" class="outer-dec balloon-left" alt="balloon">
+        <img src="balloon.png" class="outer-dec balloon-right" alt="balloon">
+        <img src="cloud.png" class="outer-dec cloud-2" alt="cloud">
+        <img src="heart.jpg.webp" class="outer-dec sparkles-1" alt="sparkles">
+        <img src="cupid.webp" class="outer-dec cupid" alt="cupid">
+    </div>
+
+    <!-- Big Container -->
+    <div class="main-card">
+
+        <!-- Inner Decorations (Stickers) -->
+        <img src="roses.webp" class="decoration hanging-hearts" alt="decoration">
+        <img src="paperplane.png" class="decoration paper-plane" alt="decoration">
+        <img src="calendar.png" class="decoration calendar-icon" alt="decoration">
+        <img src="chocolate.png" class="decoration chocolates" alt="decoration">
+
+        <!-- Screen 1: The Ask -->
+        <div id="ask-screen" class="screen active-screen">
+            <h1 class="fun-title">Hi nga <br> Will you be my Valentine? </h1>
+            <div class="main-image-wrapper">
+                <img src="teddy1.webp" alt="Cute Bear" class="main-img">
+            </div>
+            <div class="btn-group">
+                <button id="yes-btn" class="fun-btn yes-btn">YES!!! KANDIPA PLZ TQ </button>
+                <button id="no-btn" class="fun-btn no-btn">PODA P_P</button>
+            </div>
+        </div>
+
+        <!-- Screen 2: Try Again (Redirect from No) -->
+        <div id="try-again-screen" class="screen hidden">
+            <h1 class="fun-title">Thirupi try pannunga nga plz T_T</h1>
+            <div class="main-image-wrapper">
+                <img src="sad_heart.png" alt="Sad Heart" class="main-img">
+            </div>
+            <p class="subtitle">Manasu ipdi odachitingale, olunga thirupi pannunga tq</p>
+            <button id="retry-btn" class="fun-btn retry-btn">Try again </button>
+        </div>
+
+        <!-- Screen 3: Celebration (Yes Result) -->
+        <div id="celebration-screen" class="screen hidden">
+            <h1 class="fun-title">YAY!!! YIPPEEEEE</h1>
+            <p class="subtitle">Me make this for u hehe</p>
+
+            <!-- The Gift Box in the Middle -->
+            <div class="gift-box-container">
+                <button id="open-gift-btn" class="gift-box-btn">
+                    <img src="bouquet.webp" alt="Closed Gift Box" class="gift-box-img">
+                    <span class="click-me">click this</span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <!-- Screen 4: The Actual Gifts (Revealed) -->
+        <div id="gift-reveal-screen" class="screen hidden">
+            <h1 class="fun-title">Ongaloda valentines gift</h1>
+
+            <div class="gifts-display">
+                <div class="gift-item">
+                    <img src="us.jpg" alt="Us" class="gift-img">
+                    <span>Us forever</span>
+                </div>
+
+            </div>
+
+            <div class="message-box">
+                <p>enga irunthu vanthinga nu therla, but neenga illama enala iruka mudiyathu nga. Tq.</p>
+            </div>
+
+            <button id="back-to-start-btn" class="fun-btn restart-btn">Starting la irunthu</button>
+        </div>
+
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
